@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mesurale/core/utils/values/colors.dart';
+import 'package:mesurale/features/home_features/views/components/notes_textfield.dart';
 import 'package:quantity_input/quantity_input.dart';
-
 import 'components/dropDownColors.dart';
 import 'components/radioButtonsDropDown.dart';
 
@@ -13,6 +13,8 @@ class AddChassis extends StatefulWidget {
 }
 
 class _AddChassisState extends State<AddChassis> {
+  int simpleIntInput = 0;
+
   @override
   Widget build(BuildContext context) {
     const List<String> list = <String>[
@@ -142,110 +144,123 @@ class _AddChassisState extends State<AddChassis> {
     ];
     final MediaQueryData mediaQuery = MediaQuery.of(context);
     final Size size = mediaQuery.size;
-    int simpleIntInput = 0;
+
     String dropdownValue = list.first;
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: secondaryColor,
         body: Center(
           child: Container(
-            height: size.height * 0.75,
+            height: size.height * 0.9,
             width: size.width * 0.9,
             decoration: BoxDecoration(
                 color: primaryColor,
                 borderRadius: BorderRadius.all(Radius.circular(15.0))),
-            child: Column(
-              children: [
-                Padding(padding: EdgeInsets.all(10)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text("Hauteur: "),
-                    SizedBox(
-                      width: size.width * 0.3,
-                      child: TextFormField(
-                        autofocus: true,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide(width: 2),
-                              borderRadius: BorderRadius.circular(50)),
-                          labelText: 'Hauteur',
-                          hintText: 'Hauteur',
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(padding: EdgeInsets.all(10)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("Hauteur: "),
+                      SizedBox(
+                        width: size.width * 0.3,
+                        child: TextFormField(
+                          cursorColor: themeColor,
+                          autofocus: true,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                            floatingLabelStyle: TextStyle(color: themeColor),
+                            focusColor: themeColor,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 2,
+                                  color: themeColor,
+                                ),
+                                borderRadius: BorderRadius.circular(50)),
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 2,
+                                ),
+                                borderRadius: BorderRadius.circular(50)),
+                            labelText: 'Hauteur',
+                            hintText: 'Hauteur',
+                          ),
                         ),
                       ),
-                    ),
-                    Text("Largeur: "),
-                    SizedBox(
-                      width: size.width * 0.3,
-                      child: TextFormField(
-                        autofocus: true,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide(width: 2),
-                              borderRadius: BorderRadius.circular(50)),
-                          labelText: 'Largeur',
-                          hintText: 'Largeur',
+                      Text("Largeur: "),
+                      SizedBox(
+                        width: size.width * 0.3,
+                        child: TextFormField(
+                          cursorColor: themeColor,
+                          autofocus: true,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                            floatingLabelStyle: TextStyle(color: themeColor),
+                            focusColor: themeColor,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 2,
+                                  color: themeColor,
+                                ),
+                                borderRadius: BorderRadius.circular(50)),
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  width: 2,
+                                ),
+                                borderRadius: BorderRadius.circular(50)),
+                            labelText: 'Largeur',
+                            hintText: 'Largeur',
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                Row(children: [
-                  Text("Hauteur: "),
-                  SizedBox(
-                    width: size.width * 0.3,
-                    child: TextFormField(
-                      autofocus: true,
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide(width: 2),
-                            borderRadius: BorderRadius.circular(50)),
-                        labelText: 'Hauteur',
-                        hintText: 'Hauteur',
-                      ),
-                    ),
+                    ],
                   ),
-                ]),
-                Padding(padding: EdgeInsets.all(10)),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text("Quantité: "),
-                      QuantityInput(
+                  Padding(padding: EdgeInsets.all(10)),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text("Quantité: "),
+                        QuantityInput(
                           value: simpleIntInput,
-                          onChanged: (value) => setState(() => simpleIntInput =
-                              int.parse(value.replaceAll(',', '')))),
-                    ]),
-                Padding(padding: EdgeInsets.all(10)),
-                Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text("Remplissage: "),
-                      DropDownColorList(),
-                    ]),
-                Padding(padding: EdgeInsets.all(10)),
-                Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text("Couleur: "),
-                      DropDownColorList(),
-                    ]),
-                Padding(padding: EdgeInsets.all(10)),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text("Contenu :"),
-                      TwoRadioButtonsWithDropdown(),
-                    ]),
-                Padding(padding: EdgeInsets.all(10)),
-                Text("NOTE:"),
-                TextField(
-                  maxLength: 500,
-                ),
-              ],
+                          onChanged: (value) => setState(
+                            () => simpleIntInput = int.parse(
+                              value.replaceAll(',', ''),
+                            ),
+                          ),
+                          step: 1,
+                        ),
+                      ]),
+                  Padding(padding: EdgeInsets.all(10)),
+                  Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text("Remplissage: "),
+                        DropDownColorList(),
+                      ]),
+                  Padding(padding: EdgeInsets.all(10)),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text("Contenu :"),
+                        TwoRadioButtonsWithDropdown(),
+                      ]),
+                  Padding(padding: EdgeInsets.all(10)),
+                  Text("NOTE:"),
+                  NotesTextField(),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text("Enregistrer"),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: themeColor,
+                      animationDuration: Duration(milliseconds: 300),
+                      padding: EdgeInsets.all(18.0),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

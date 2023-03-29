@@ -4,6 +4,8 @@ import 'package:mesurale/features/home_features/views/adding_Chassis_view.dart';
 import 'package:mesurale/features/home_features/views/home_page.dart';
 import '../../../../core/utils/values/colors.dart';
 import '../adding_compose_view.dart';
+import '../adding_rideau_view.dart';
+import '../adding_toiture_view.dart';
 import 'productButton.dart';
 
 class AddingProduct extends StatelessWidget {
