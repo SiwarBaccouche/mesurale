@@ -25,6 +25,7 @@ class ClientListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
+
           Container(
             width: size.width * 0.8,
             height: size.height * 0.3,
@@ -73,6 +74,7 @@ class ClientListItem extends StatelessWidget {
                         ),
                       ),
                     ),
+
                   ],
                 ),
                 SizedBox(
@@ -148,9 +150,12 @@ class ClientListItem extends StatelessWidget {
                     ),
                   ],
                 ),
+
+           
+
               ],
             ),
-          )
+          ),
         ],
       ),
     );

@@ -21,6 +21,7 @@ class _AddClientState extends State<AddClient> {
     final Size size = mediaQuery.size;
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset:false,
         backgroundColor: secondaryColor,
         body: Center(
           child: Padding(
@@ -64,6 +65,19 @@ class _AddClientState extends State<AddClient> {
                       ],
                     ),
                   ),
+                  Padding(padding: EdgeInsets.all(10)),
+                  SizedBox(width: size.width*0.5,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Enregistrer"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: themeColor,
+                        animationDuration: Duration(milliseconds: 300),
+                        padding: EdgeInsets.all(18.0),
+                      ),
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.all(20)),
                 ],
               ),
             ),

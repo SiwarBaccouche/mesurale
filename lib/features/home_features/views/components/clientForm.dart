@@ -33,12 +33,22 @@ class _ClientFormState extends State<ClientForm> {
               SizedBox(
                 width: size.width * 0.6,
                 child: TextFormField(
+                  cursorColor: themeColor,
                   autofocus: true,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
+    floatingLabelStyle: TextStyle(color: themeColor),
+    focusColor: themeColor,
+    focusedBorder: OutlineInputBorder(
+    borderSide: BorderSide(
+    width: 2,
+    color: themeColor,
+    ), borderRadius: BorderRadius.circular(50)),
                     border: OutlineInputBorder(
+
                         borderSide: BorderSide(width: 2),
                         borderRadius: BorderRadius.circular(50)),
+
                     labelText: 'Nom',
                     hintText: 'Tapez le nom du client',
                   ),
@@ -54,12 +64,22 @@ class _ClientFormState extends State<ClientForm> {
               SizedBox(
                 width: size.width * 0.6,
                 child: TextFormField(
+                  cursorColor: themeColor,
                   autofocus: true,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
+                    floatingLabelStyle: TextStyle(color: themeColor),
+                    focusColor: themeColor,
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          width: 2,
+                          color: themeColor,
+                        ), borderRadius: BorderRadius.circular(50)),
                     border: OutlineInputBorder(
+
                         borderSide: BorderSide(width: 2),
                         borderRadius: BorderRadius.circular(50)),
+
                     labelText: 'Prénom',
                     hintText: 'Tapez le prénom du client',
                   ),
@@ -75,12 +95,22 @@ class _ClientFormState extends State<ClientForm> {
               SizedBox(
                 width: size.width * 0.6,
                 child: TextFormField(
+                  cursorColor: themeColor,
                   autofocus: true,
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
+                    floatingLabelStyle: TextStyle(color: themeColor),
+                    focusColor: themeColor,
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          width: 2,
+                          color: themeColor,
+                        ), borderRadius: BorderRadius.circular(50)),
                     border: OutlineInputBorder(
+
                         borderSide: BorderSide(width: 2),
                         borderRadius: BorderRadius.circular(50)),
+
                     labelText: 'Téléphone',
                     hintText: 'Tapez le téléphone',
                   ),
@@ -96,12 +126,22 @@ class _ClientFormState extends State<ClientForm> {
               SizedBox(
                 width: size.width * 0.6,
                 child: TextFormField(
+                  cursorColor: themeColor,
                   autofocus: true,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
+                    floatingLabelStyle: TextStyle(color: themeColor),
+                    focusColor: themeColor,
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          width: 2,
+                          color: themeColor,
+                        ), borderRadius: BorderRadius.circular(50)),
                     border: OutlineInputBorder(
+
                         borderSide: BorderSide(width: 2),
                         borderRadius: BorderRadius.circular(50)),
+
                     labelText: 'Adresse',
                     hintText: "Tapez l'adresse",
                   ),

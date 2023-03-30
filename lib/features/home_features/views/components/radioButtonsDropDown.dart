@@ -74,18 +74,18 @@ class TwoRadioButtonsWithDropdown extends StatefulWidget {
 class _TwoRadioButtonsWithDropdownState
     extends State<TwoRadioButtonsWithDropdown> {
   int? _radioValue = 0;
-  List<String> _options1 = ['Option 1-1', 'Option 1-2', 'Option 1-3'];
-  String? _selectedOption1 = 'Option 1-1';
-  List<String> _options2 = ['Option 2-1', 'Option 2-2', 'Option 2-3'];
-  String? _selectedOption2 = 'Option 2-1';
+  List<String> _options1 = ['FR'];
+  String? _selectedOption1 = 'FR';
+  List<String> _options2 = ['avec couvre joint', 'sans couvre joint', 'avec réducteur'];
+  String? _selectedOption2 = 'avec couvre joint';
 
   void _handleRadioValueChanged(int? value) {
     setState(() {
       _radioValue = value;
       if (_radioValue == 0) {
-        _selectedOption2 = 'Option 2-1';
+        _selectedOption2 = 'avec couvre joint';
       } else {
-        _selectedOption1 = 'Option 1-1';
+        _selectedOption1 = 'FR';
       }
     });
   }
@@ -102,19 +102,22 @@ class _TwoRadioButtonsWithDropdownState
               groupValue: _radioValue,
               onChanged: _handleRadioValueChanged,
             ),
-            Text('aucun'),
+            Text('Frappe'),
             Radio(
+              activeColor: themeColor,
               value: 1,
               groupValue: _radioValue,
               onChanged: _handleRadioValueChanged,
             ),
-            Text('Option 2'),
+            Text('Menuiserie coulissante'),
           ],
         ),
         if (_radioValue == 0)
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: DropdownButton<String>(
+        iconDisabledColor: themeColor,
+              iconEnabledColor: themeColor,
               value: _selectedOption1,
               onChanged: (String? newValue) {
                 setState(() {
@@ -133,6 +136,8 @@ class _TwoRadioButtonsWithDropdownState
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: DropdownButton<String>(
+              iconDisabledColor: themeColor,
+              iconEnabledColor: themeColor,
               value: _selectedOption2,
               onChanged: (String? newValue) {
                 setState(() {
@@ -141,6 +146,7 @@ class _TwoRadioButtonsWithDropdownState
               },
               items: _options2.map((String option) {
                 return DropdownMenuItem<String>(
+
                   value: option,
                   child: Text(option),
                 );

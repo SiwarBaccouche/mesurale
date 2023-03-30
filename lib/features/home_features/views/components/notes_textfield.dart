@@ -20,6 +20,7 @@ class _NotesTextFieldState extends State<NotesTextField> {
         cursorColor: themeColor,
         maxLength: 500,
         decoration: InputDecoration(
+
           hintText: 'Ecrivez vos notes',
           hintStyle: TextStyle(color: Colors.black54),
           //counterText: '', // Remove the default character count

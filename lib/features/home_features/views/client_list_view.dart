@@ -3,6 +3,7 @@ import 'package:mesurale/core/utils/values/colors.dart';
 
 import '../utils/models/client_model.dart';
 import '../widgets/client_List_Item.dart';
+import 'adding_client_view.dart';
 import 'home_page.dart';
 
 class ClientListView extends StatefulWidget {
@@ -71,7 +72,7 @@ class _ClientListViewState extends State<ClientListView> {
                       context,
                       MaterialPageRoute(
                         builder: (BuildContext context) {
-                          return HomePage();
+                          return AddClient();
                         },
                       ),
                     );
@@ -82,6 +83,7 @@ class _ClientListViewState extends State<ClientListView> {
                 );
               },
             ),
+
           ],
         ),
       ),

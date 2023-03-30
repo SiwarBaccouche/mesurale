@@ -214,8 +214,8 @@ class _BottomBarState extends State<BottomBar>
                           child: Center(
                               child: Icon(
                                 Icons.add,
-                                color: widget.currentPage == 2
-                                    ? widget.colors[2]
+                                color: widget.currentPage == 1
+                                    ? widget.colors[1]
                                     : widget.unselectedColor,
                               )),
                         ),
@@ -225,8 +225,8 @@ class _BottomBarState extends State<BottomBar>
                           child: Center(
                               child: Icon(
                                 Icons.search,
-                                color: widget.currentPage == 1
-                                    ? widget.colors[1]
+                                color: widget.currentPage == 2
+                                    ? widget.colors[2]
                                     : widget.unselectedColor,
                               )),
                         ),
@@ -238,8 +238,8 @@ class _BottomBarState extends State<BottomBar>
                           child: Center(
                               child: Icon(
                                 Icons.settings,
-                                color: widget.currentPage == 4
-                                    ? widget.colors[4]
+                                color: widget.currentPage == 3
+                                    ? widget.colors[3]
                                     : widget.unselectedColor,
                               )),
                         ),
